@@ -10,19 +10,20 @@ int main(int argc, char *argv[]) {
   FILE *outputFile = stdout;
   size = 100;
   line = (char*) malloc (size + 1);
-  if (argc >= 1) {
-    printf("Arg 1: %s\n", argv[0]);
-    inputFile = fopen(argv[0], "r");
-  }
-  if (argc >= 2) {
-    printf("Arg 2: %s\n", argv[1]);
-    outputFile = fopen(argv[1], "w");
-  }
+  // if (argc >= 2) {
+  //   // printf("Arg 2: %s\n", argv[1]);
+  //   outputFile = fopen(argv[1], "w");
+  // }
+  // if (argc >= 1) {
+  //   // printf("Arg 1: %s\n", argv[0]);
+  //   inputFile = fopen(argv[0], "r");
+  // }
+
 
   while (getline(&line, &size, inputFile) > 0) {
     char *result = disemvowel(line);
-    fprintf(outputFile, "%s\n", result);
-    // printf("%s\n", result);
+    // fprintf(outputFile, "%s\n", result);
+    printf("%s\n", result);
     free(result);
   }
   
